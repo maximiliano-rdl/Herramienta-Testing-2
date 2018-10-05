@@ -15,7 +15,7 @@ public class MainFrame extends javax.swing.JFrame {
     private int yMouse;
     private int xMouse;
     private String rutaArchivo;
-    CompilationUnit cu = null;
+    //CompilationUnit cu = null;
     public MainFrame() {
         
         initComponents();
@@ -57,7 +57,6 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
 
@@ -358,12 +357,6 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/qa-logo.jpg"))); // NOI18N
-        jLabel23.setToolTipText("");
-        jLabel23.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
         jLabel24.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel24.setText("B I T - T E S T I N G");
 
@@ -392,18 +385,16 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(44, 44, 44)
                 .addComponent(jLabel24)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel23)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(1, 1, 1)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -441,7 +432,7 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(83, 83, 83)))
+                        .addGap(80, 80, 80)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -533,7 +524,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jListDirectorioMouseClicked
 
     private void jListClasesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListClasesValueChanged
-        String claseSeleccionada = jListClases.getSelectedValue();
+       /* String claseSeleccionada = jListClases.getSelectedValue();
         System.out.println("Seleccionado: " + claseSeleccionada);
         DefaultListModel lista = new DefaultListModel();
         try {
@@ -546,11 +537,11 @@ public class MainFrame extends javax.swing.JFrame {
         methodNameCollector.visit(cu, methodNames);
         methodNames.forEach(n -> lista.addElement(n));
 
-        jListMetodos.setModel(lista);
+        jListMetodos.setModel(lista);*/
     }//GEN-LAST:event_jListClasesValueChanged
 
     private void jListMetodosValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListMetodosValueChanged
-        String metodoElegido = jListMetodos.getSelectedValue();
+       /* String metodoElegido = jListMetodos.getSelectedValue();
         String codigoMetodo = "";
         for (TypeDeclarationration<?> type : cu.getTypes()) {
             for (MethodDeclaration method : type.getMethods()) {
@@ -562,11 +553,11 @@ public class MainFrame extends javax.swing.JFrame {
         int lineasCodigo = contarLineas(codigoMetodo);
         jLabel14.setText(String.valueOf(lineasCodigo));
         
-        /*
+        
         List<Comment> comentariosList = cu.getAllContainedComments();
         int cantComentarios = comentariosList.size();
         jLabel15.setText(String.valueOf(cantComentarios));
-        */
+        
         int cantComentarios = contarComentarios(codigoMetodo);
         jLabel15.setText(String.valueOf(cantComentarios));
         
@@ -582,9 +573,9 @@ public class MainFrame extends javax.swing.JFrame {
         else
             jLabel17.setForeground(Color.red);
         
-        jTextArea1.setText(codigoMetodo);
+        jTextArea1.setText(codigoMetodo);*/
     }//GEN-LAST:event_jListMetodosValueChanged
-
+    /*
     private int calcularCC(String codigoMetodo){
         int np = 0;
         String nodosPredicado[] = {" if ", " while ", " for ", "case ", 
@@ -605,7 +596,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
     
     private int contarLineas(String codigoMetodo) {
-        int cant = 0;
+        /*int cant = 0;
         int total = codigoMetodo.length();
         for (int i = 0; i < total; ++i) {
             char letra = codigoMetodo.charAt(i);
@@ -615,7 +606,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     private int contarComentarios(String codigoMetodo) {
-        int comentarios = 0;
+       /* int comentarios = 0;
         String codigoActual = codigoMetodo;
         String listaComent[] = {"//", "/\\*"};
         for(String barra: listaComent){
@@ -627,7 +618,7 @@ public class MainFrame extends javax.swing.JFrame {
 	    }
         }
         return comentarios;
-    }
+    }*/
     
     /**
      * @param args the command line arguments
@@ -678,7 +669,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
